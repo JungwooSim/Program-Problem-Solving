@@ -1,9 +1,10 @@
-package me.study;
+package me.study.baekjoon;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class Main {
+public class section_3 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
