@@ -1,4 +1,4 @@
-package me.study.section_1;
+package me.study.baekjoon;
 
 import java.util.Scanner;
 
@@ -19,7 +19,7 @@ N명 학생들의 점수가 주어졌을 때, 가장 높은 점수와 가장 낮
 표준 출력으로 가장 높은 점수와 가장 낮은 점수의 차이를 출력한다.
 
  */
-public class secion_1 {
+public class section_1 {
 
     public static void main() {
         Scanner scanner = new Scanner(System.in);
