@@ -23,3 +23,7 @@ MLE(Memory Limit Exceeded)
 ### section_4 - 보너스 점수 (<a href="https://www.acmicpc.net/problem/17389" target="_blank">링크</a>)
 - - -
 ### section_5 - 수 찾기 (<a href="https://www.acmicpc.net/problem/1920" target="_blank">링크</a>)
+- - -
+### section_6 - 걸그룹 마스터 준석이 (<a href="https://www.acmicpc.net/problem/16165" target="_blank">링크</a>)
+- - -
+
