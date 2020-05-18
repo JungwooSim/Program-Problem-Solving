@@ -26,4 +26,5 @@ MLE(Memory Limit Exceeded)
 - - -
 ### section_6 - 걸그룹 마스터 준석이 (<a href="https://www.acmicpc.net/problem/16165" target="_blank">링크</a>)
 - - -
+### section_7 - APC는 왜 서브태스크 대회가 되었을까? (<a href="https://www.acmicpc.net/problem/17224" target="_blank">링크</a>)
 
