@@ -21,3 +21,5 @@ MLE(Memory Limit Exceeded)
 ### section_3 - 이름궁합 테스트 (<a href="https://www.acmicpc.net/problem/17269" target="_blank">링크</a>)
 - - -
 ### section_4 - 보너스 점수 (<a href="https://www.acmicpc.net/problem/17389" target="_blank">링크</a>)
+- - -
+### section_5 - 수 찾기 (<a href="https://www.acmicpc.net/problem/1920" target="_blank">링크</a>)
