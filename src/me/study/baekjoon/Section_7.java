@@ -2,7 +2,7 @@ package me.study.baekjoon;
 
 import java.util.ArrayList;
 
-public class section_7 {
+public class Section_7 {
     public static void main(String[] args) {
         Integer point = 0;
         Integer problemCount; // 문제의 수

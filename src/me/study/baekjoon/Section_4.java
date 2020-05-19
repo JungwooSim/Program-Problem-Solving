@@ -1,6 +1,6 @@
 package me.study.baekjoon;
 
-public class section_4 {
+public class Section_4 {
     public static void main(String[] args) {
 
         String TrueAndFalse = "XOOOXOOX";

@@ -2,7 +2,7 @@ package me.study.baekjoon;
 
 import java.util.HashMap;
 
-public class section_5 {
+public class Section_5 {
     public static void main(String[] args) {
         String str_1 = "41523";
         String str_2 = "13795";

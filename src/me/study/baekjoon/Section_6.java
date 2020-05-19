@@ -3,7 +3,7 @@ package me.study.baekjoon;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class section_6 {
+public class Section_6 {
     public static void main(String[] args) {
 
         HashMap<String, ArrayList<String>> team = new HashMap<>();
