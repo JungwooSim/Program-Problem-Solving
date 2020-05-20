@@ -31,4 +31,7 @@ MLE(Memory Limit Exceeded)
 ### section_8 - The candy war (<a href="https://www.acmicpc.net/problem/9037" target="_blank">링크</a>)
 - - -
 ### section_9 - Mixing Milk (<a href="https://www.acmicpc.net/problem/16769" target="_blank">링크</a>)
+- - -
+### section_10 - Z (<a href="https://www.acmicpc.net/problem/1074" target="_blank">링크</a>)
+* 소스 확인 필요
 
