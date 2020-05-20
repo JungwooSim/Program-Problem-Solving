@@ -29,4 +29,6 @@ MLE(Memory Limit Exceeded)
 ### section_7 - APC는 왜 서브태스크 대회가 되었을까? (<a href="https://www.acmicpc.net/problem/17224" target="_blank">링크</a>)
 - - -
 ### section_8 - The candy war (<a href="https://www.acmicpc.net/problem/9037" target="_blank">링크</a>)
+- - -
+### section_9 - Mixing Milk (<a href="https://www.acmicpc.net/problem/16769" target="_blank">링크</a>)
 
