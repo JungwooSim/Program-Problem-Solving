@@ -1,10 +1,11 @@
 package me.study;
 
-import me.study.baekjoon.Section_10;
+import me.study.baekjoon.Section_11;
 
 public class Main {
     public static void main(String[] args) {
-        Section_10 section_10 = new Section_10();
-        section_10.process();
+        Section_11 section_11 = new Section_11();
+        Integer[] data = {2,2,2};
+        section_11.process(data);
     }
 }
