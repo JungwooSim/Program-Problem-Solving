@@ -15,30 +15,17 @@ MLE(Memory Limit Exceeded)
 ## BAEKJOON (<a href="https://www.acmicpc.net" target="_blank">링크</a>)
 
 ### section_1 - 행복 (<a href="https://www.acmicpc.net/problem/15969" target="_blank">링크</a>)
-- - -
 ### section_2 - 수빈이와 수열 (<a href="https://www.acmicpc.net/problem/10539" target="_blank">링크</a>)
-- - -
 ### section_3 - 이름궁합 테스트 (<a href="https://www.acmicpc.net/problem/17269" target="_blank">링크</a>)
-- - -
 ### section_4 - 보너스 점수 (<a href="https://www.acmicpc.net/problem/17389" target="_blank">링크</a>)
-- - -
 ### section_5 - 수 찾기 (<a href="https://www.acmicpc.net/problem/1920" target="_blank">링크</a>)
-- - -
 ### section_6 - 걸그룹 마스터 준석이 (<a href="https://www.acmicpc.net/problem/16165" target="_blank">링크</a>)
-- - -
 ### section_7 - APC는 왜 서브태스크 대회가 되었을까? (<a href="https://www.acmicpc.net/problem/17224" target="_blank">링크</a>)
-- - -
 ### section_8 - The candy war (<a href="https://www.acmicpc.net/problem/9037" target="_blank">링크</a>)
-- - -
 ### section_9 - Mixing Milk (<a href="https://www.acmicpc.net/problem/16769" target="_blank">링크</a>)
-- - -
 ### section_10 - Z (<a href="https://www.acmicpc.net/problem/1074" target="_blank">링크</a>)
 * 소스 확인 필요
-- - -
 ### section_11 - 주사위 세개 (<a href="https://www.acmicpc.net/problem/2480" target="_blank">링크</a>)
-- - -
 ## Codility (<a href="https://app.codility.com/programmers/" target="_blank">링크</a>)
-
 ### BinaryGap
-- - -
 ### CyclicRotation
