@@ -1,11 +1,11 @@
 package me.study;
 
-import me.study.baekjoon.Section_11;
+import me.study.codility.CyclicRotation;
 
 public class Main {
     public static void main(String[] args) {
-        Section_11 section_11 = new Section_11();
-        Integer[] data = {2,2,2};
-        section_11.process(data);
+        CyclicRotation cyclicRotation = new CyclicRotation();
+        int[] data = {1,2,3,4};
+        cyclicRotation.solution(data, 4);
     }
 }
