@@ -32,3 +32,4 @@ MLE(Memory Limit Exceeded)
 ### CyclicRotation
 ### OddOccurrencesInArray
 ### FrogJmp
+### PermMissingElem
