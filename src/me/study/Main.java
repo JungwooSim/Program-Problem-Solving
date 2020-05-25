@@ -1,11 +1,12 @@
 package me.study;
 
 import me.study.codility.CyclicRotation;
+import me.study.codility.OddOccurrencesInArray;
 
 public class Main {
     public static void main(String[] args) {
-        CyclicRotation cyclicRotation = new CyclicRotation();
-        int[] data = {1,2,3,4};
-        cyclicRotation.solution(data, 4);
+        OddOccurrencesInArray oddOccurrencesInArray = new OddOccurrencesInArray();
+        int[] data = {9,3,9,3,9,7,9};
+        System.out.println(oddOccurrencesInArray.solution(data));
     }
 }
