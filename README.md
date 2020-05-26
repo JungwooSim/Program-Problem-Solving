@@ -33,3 +33,4 @@ MLE(Memory Limit Exceeded)
 ### OddOccurrencesInArray
 ### FrogJmp
 ### PermMissingElem
+### TapeEquilibrium
