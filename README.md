@@ -34,3 +34,4 @@ MLE(Memory Limit Exceeded)
 ### FrogJmp
 ### PermMissingElem
 ### TapeEquilibrium
+### FrogRiverOne
