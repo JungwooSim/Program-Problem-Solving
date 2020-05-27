@@ -11,21 +11,28 @@ N is an integer within the range [1..2,147,483,647].
  */
 public class BinaryGap {
     public int solution(int N) {
-        System.out.println(Integer.toBinaryString(N));
-
         int countWith1 = 0;
         int gapCount = 0;
         int maxGapCount = 0;
-        for (char value : Integer.toBinaryString(N).toCharArray()) {
-            if (value == '1') {
-                gapCount = 0;
-                countWith1++;
-            } else {
-                gapCount++;
+        char[] binary = Integer.toBinaryString(N).toCharArray();
+        boolean checkWith1 = false;
+
+        for (int i = binary.length-1; i >= 0; i--) {
+            if (binary[i] == '1') {
+                checkWith1 = true;
             }
 
-            if (gapCount > maxGapCount) {
-                maxGapCount = gapCount;
+            if (checkWith1) {
+                if (binary[i] == '1') {
+                    gapCount = 0;
+                    countWith1++;
+                } else {
+                    gapCount++;
+                }
+
+                if (gapCount > maxGapCount) {
+                    maxGapCount = gapCount;
+                }
             }
         }
         if (countWith1 <= 1) {
