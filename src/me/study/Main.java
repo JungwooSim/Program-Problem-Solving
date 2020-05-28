@@ -4,8 +4,9 @@ import me.study.codility.*;
 
 public class Main {
     public static void main(String[] args) {
-        int[] data = {1, 3, 1, 4, 2, 3, 5, 4};
-        FrogRiverOne frogRiverOne = new FrogRiverOne();
-        System.out.println(frogRiverOne.solution(5, data));
+        int[] data = {3, 4, 4, 6, 1, 4, 4};
+
+        MaxCounters maxCounters = new MaxCounters();
+        System.out.println(maxCounters.solution(5, data));
     }
 }
