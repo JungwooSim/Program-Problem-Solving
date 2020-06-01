@@ -36,3 +36,5 @@ MLE(Memory Limit Exceeded)
 ### TapeEquilibrium
 ### FrogRiverOne
 ### MaxCounters
+### MissingInteger
+### PermCheck
