@@ -49,13 +49,24 @@ the function should return [3, 2, 2, 4, 2], as explained above.
  */
 package me.study.codility;
 
+import java.util.Arrays;
+
 public class MaxCounters {
+    public static void main(String[] args) {
+        MaxCounters maxCounters = new MaxCounters();
+
+        int N = 5;
+        int[] A = {6,4,4,4,1,4,4};
+
+        maxCounters.solution(N, A);
+    }
+
     public int[] solution(int N, int[] A){
         int[] count = new int[N];
         int maxValue = 0;
 
-        for (int index=0; index < A.length; index++) {
 
+        for (int index=0; index < A.length; index++) {
             if (A[index] >= 1 && A[index] <= N) {
                 count[A[index]-1]++;
                 if (count[A[index]-1] > maxValue) {
@@ -64,17 +75,21 @@ public class MaxCounters {
             }
 
             if (A[index] == N+1) {
-                // TODO : 최악의 경우 n^2 으로 돌수가 있으니 수정 필요.
-                for (int i=0;i<count.length;i++) {
-                    count[i] = maxValue;
-                }
+                count = new int[N];
             }
         }
-        return A;
+
+        for (int index=0; index < count.length; index++) {
+            count[index] += maxValue;
+        }
+
+        // TODO : 6.2 maxValue 값에 오류가 있음. 이부분 수정 필요
+        System.out.println("====");
+        System.out.println("maxValue : " + maxValue);
+        Arrays.stream(count).forEach(System.out::println);
+        return count;
     }
 }
-
-
 
 
 
