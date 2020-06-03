@@ -49,14 +49,12 @@ the function should return [3, 2, 2, 4, 2], as explained above.
  */
 package me.study.codility;
 
-import java.util.Arrays;
-
 public class MaxCounters {
     public static void main(String[] args) {
         MaxCounters maxCounters = new MaxCounters();
 
         int N = 5;
-        int[] A = {6,4,4,4,1,4,4};
+        int[] A = {3,4,4,6,1,4,4};
 
         maxCounters.solution(N, A);
     }
@@ -64,29 +62,30 @@ public class MaxCounters {
     public int[] solution(int N, int[] A){
         int[] count = new int[N];
         int maxValue = 0;
-
+        int tmpMaxValue = 0;
 
         for (int index=0; index < A.length; index++) {
-            if (A[index] >= 1 && A[index] <= N) {
+            if (A[index] > N) {
+                maxValue = tmpMaxValue;
+            } else {
+                if (count[A[index] - 1] < maxValue) {
+                    count[A[index] - 1] = maxValue;
+                }
                 count[A[index]-1]++;
-                if (count[A[index]-1] > maxValue) {
-                    maxValue = count[A[index]-1];
+
+                if (count[A[index] - 1] > tmpMaxValue) {
+                    tmpMaxValue = count[A[index] - 1];
                 }
             }
+        }
 
-            if (A[index] == N+1) {
-                count = new int[N];
+        if (maxValue > 0) {
+            for (int index=0; index < count.length; index++) {
+                if (count[index] < maxValue) {
+                    count[index] = maxValue;
+                }
             }
         }
-
-        for (int index=0; index < count.length; index++) {
-            count[index] += maxValue;
-        }
-
-        // TODO : 6.2 maxValue 값에 오류가 있음. 이부분 수정 필요
-        System.out.println("====");
-        System.out.println("maxValue : " + maxValue);
-        Arrays.stream(count).forEach(System.out::println);
         return count;
     }
 }
