@@ -20,34 +20,26 @@ import java.util.Set;
 public class MissingInteger {
     public static void main(String[] args) {
 //        int[] data = {1, 3, 6, 4, 1, 2};
-//        int[] data = {1,2,3};
-        int[] data = {-1, -3};
+        int[] data = {1,2,3};
+//        int[] data = {-1, -3};
 
         MissingInteger missingInteger = new MissingInteger();
         System.out.println(missingInteger.solution(data));
     }
 
     public int solution(int[] A) {
-        Set<Integer> setData = new HashSet<>();
-        int maxValue = 0;
+        Set<Integer> data = new HashSet<>();
 
-        for (int i=0; i < A.length; i++) {
-            // 음수 체크
-            if (A[i] < 0) {
-                return 1;
-            } else {
-                if (maxValue < A[i]) {
-                    maxValue = A[i];
-                }
-                setData.add(A[i]);
-            }
+        for (int value : A) {
+            data.add(value);
         }
 
-        for (int i = maxValue; i > 0; i--) {
-            if (!setData.contains(i)) {
+        for (int i = 1; i <= Integer.MAX_VALUE; i++) {
+            if (!data.contains(i)) {
                 return i;
             }
         }
-        return maxValue + 1;
+
+        return -1;
     }
 }

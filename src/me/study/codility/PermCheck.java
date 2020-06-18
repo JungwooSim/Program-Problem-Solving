@@ -40,8 +40,8 @@ the function should return 0.
  */
 package me.study.codility;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 
 public class PermCheck {
     public static void main(String[] args) {
@@ -52,21 +52,18 @@ public class PermCheck {
     }
 
     public int solution(int[] A) {
-        Map<Integer, Boolean> check = new HashMap<>();
-        int maxValue = 0;
+        Set<Integer> data = new HashSet<>();
 
-        for (int index=0; index < A.length; index++) {
-            check.put(A[index], false);
-            if (maxValue <= A[index]) {
-                maxValue = A[index];
-            }
-        }
-
-        for (int i = maxValue; i > 0; i-- ) {
-
-            if (!check.containsKey(i)) {
+        // 순열이 되는 조건 2가지가 있으므로 해당 조건을 확인하는 방법
+        for (int i=0; i < A.length; i++) {
+            if (A[i] > A.length) {
                 return 0;
             }
+
+            if (data.contains(A[i])) {
+                return 0;
+            }
+            data.add(A[i]);
         }
         return 1;
     }
