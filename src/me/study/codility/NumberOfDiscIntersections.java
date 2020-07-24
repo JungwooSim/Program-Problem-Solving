@@ -1,7 +1,5 @@
 package me.study.codility;
-
 import java.util.Arrays;
-
 /*
 We draw N discs on a plane. The discs are numbered from 0 to N − 1.
 An array A of N non-negative integers, specifying the radiuses of the discs, is given.
