@@ -33,8 +33,6 @@ public class Exercise4 {
                 return B[i];
             }
         }
-
         return -1;
     }
-
 }
