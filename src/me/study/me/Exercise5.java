@@ -1,7 +1,6 @@
 package me.study.me;
 
 import java.util.HashSet;
-import java.util.Set;
 
 public class Exercise5 {
     public static void main(String[] args) {
@@ -15,12 +14,10 @@ public class Exercise5 {
     }
 
     public int solution(int[] A) {
-        Set temp = new HashSet();
+        HashSet<Integer> temp = new HashSet();
         int maxValue = 0;
-        int a;
 
         for (int i=0; i<A.length; i++) {
-
             if (temp.contains(A[i]*-1)) {
                 if (maxValue < Math.abs(A[i])) {
                     maxValue = Math.abs(A[i]);
@@ -29,7 +26,6 @@ public class Exercise5 {
                 temp.add(A[i]);
             }
         }
-
         return maxValue;
     }
 }
