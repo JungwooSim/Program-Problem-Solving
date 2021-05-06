@@ -10,7 +10,41 @@ Write an efficient algorithm for the following assumptions:
 N is an integer within the range [1..2,147,483,647].
  */
 public class BinaryGap {
-    public int solution(int N) {
+
+    public static void main(String[] args) {
+        int N = 32;
+
+        System.out.println(remindSolution(N));
+//        System.out.println(solution(N));
+//        System.out.println(Integer.toBinaryString(N));
+    }
+
+    // 처음에 1을 만나는 시점부터 카운트 시작.
+    // 두번째 1을 만나면 out.
+    // 두번째 1이 없다면 return 0
+    public static int remindSolution(int N) {
+        int gapCount = 0;
+        int numberOneCount = 0;
+
+        char[] binary = Integer.toBinaryString(N).toCharArray();
+
+        for (int i = 0; i < binary.length; i++) {
+            if (binary[i] == '1') {
+                numberOneCount++;
+            }
+
+            if (numberOneCount == 1 && binary[i] == '0') {
+                gapCount++;
+            }
+        }
+
+        if (numberOneCount == 1) {
+            gapCount = 0;
+        }
+        return gapCount;
+    }
+
+    public static int solution(int N) {
         int countWith1 = 0;
         int gapCount = 0;
         int maxGapCount = 0;
