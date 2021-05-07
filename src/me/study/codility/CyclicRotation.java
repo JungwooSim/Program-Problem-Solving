@@ -1,5 +1,7 @@
 package me.study.codility;
 
+import java.util.Arrays;
+
 /*
 An array A consisting of N integers is given. Rotation of the array means that each element is shifted right by one index, and the last element of the array is moved to the first place. For example, the rotation of array A = [3, 8, 9, 7, 6] is [6, 3, 8, 9, 7] (elements are shifted right by one index and 6 is moved to the first place).
 The goal is to rotate array A K times; that is, each element of A will be shifted to the right K times.
@@ -31,6 +33,31 @@ In your solution, focus on correctness. The performance of your solution will no
 
  */
 public class CyclicRotation {
+    public static void main(String[] args) {
+        int[] A = {3, 8, 9, 7, 6};
+        int K = 3;
+
+        System.out.println(Arrays.toString(remindSolution(A, K)));
+    }
+
+    // 각각의 index + K
+    // 만약 index의 범위밖으로 올라간다면, max index 값을 빼주면 됨.
+    public static int[] remindSolution(int[] A, int K) {
+        int maxRangeValue = A.length;
+        int[] result = new int[maxRangeValue];
+
+        for (int i = 0; i < A.length; i++) {
+            int x = i+K;
+
+            if (x >= maxRangeValue) {
+                x = x - maxRangeValue;
+            }
+
+            result[(x)] = A[i];
+        }
+
+        return result;
+    }
     public int[] solution(int[] A, int K) {
         int[] B = new int[A.length];
         for (int i=0; i<A.length; i++) {
