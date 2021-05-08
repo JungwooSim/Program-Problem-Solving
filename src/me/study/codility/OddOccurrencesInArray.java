@@ -33,8 +33,34 @@ package me.study.codility;
 import java.util.*;
 
 public class OddOccurrencesInArray {
+    public static void main(String[] args) {
+        int[] A = {9,3,9,3,9,7,9};
 
-    public int solution(int[] A) {
+        System.out.println(remindSolution(A));
+    }
+
+    // Map 자료구조에 key 는 값, value 는 count 를 넣고 나머지가 0이 아닌 key를 찾으면 됌.
+    public static int remindSolution(int[] A) {
+        Map<Integer, Integer> checkMap = new HashMap<>();
+
+        Arrays.stream(A).forEach(value -> {
+            if (checkMap.containsKey(value)) {
+                checkMap.put(value, checkMap.get(value) + 1);
+            } else {
+                checkMap.put(value, 1);
+            }
+        });
+
+        for (Map.Entry<Integer, Integer> entry : checkMap.entrySet()) {
+            if (entry.getValue() % 2 != 0) {
+                return entry.getKey();
+            }
+        }
+        return 0;
+    }
+
+    // for 한번으로 해결. 넣음과 동시에 중복이 있으면 삭제
+    public static int solution(int[] A) {
         Map<Integer, Integer> check = new HashMap<>();
 
         for (int value : A) {
