@@ -12,7 +12,7 @@ public class Exercise10 {
 
     public void solution(String s) {
 
-        String[] numbers = s.split("[\\+|\\-|\\*|\\*]");
+        String[] numbers = s.split("[\\+|\\-|\\*|\\/]");
         String[] operator = s.split("[0-9]+");
 
         int num1 = 0;
