@@ -27,7 +27,21 @@ X ≤ Y.
 package me.study.codility;
 
 public class FrogJmp {
-    public int solution(int X, int Y, int D){
+    public static void main(String[] args) {
+        System.out.println(remindSolution(10, 85, 30));
+    }
+
+    // Y - X 계산 후 D 로 나눈 값이 얼마냐를 찾으면 됨.
+    // 단, 나머지 값이 0보다 크다면 한번더 Jmp 를 해야하므로 + 1 을 해주는 값을 포함
+    public static int remindSolution(int X, int Y, int D) {
+        int count = (Y - X) / D;
+        if ((Y - X) % D > 0) {
+            count++;
+        }
+        return count;
+    }
+
+    public static int solution(int X, int Y, int D){
         int count = (Y - X) / D;
         if ((Y - X) % D > 0) {
             count++;
