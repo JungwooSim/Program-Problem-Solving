@@ -56,7 +56,39 @@ package me.study.codility;
 
 public class TapeEquilibrium {
 
-    public int solution(int[] A) {
+    public static void main(String[] args) {
+        int[] A = {3, 1, 2, 4, 3};
+
+        System.out.println(remindSolution(A));
+    }
+
+    // 1. for loop 를 통해 전체 값을 구하고
+    // 2. Math.abs(sequenceSum - (totalSum-sequenceSum)) 이 공식을 사용하게되면 위 문제에서 나온 P = 1, difference = |3 − 10| = 7 공식을 만들 수 있음.
+    // 아래의 solution 보다 for 문을 한번 더 적게 사용할 수 있음. (시간복잡도는 같음)
+    public static int remindSolution(int[] A) {
+        int totalSum = 0;
+        int minValue = Integer.MAX_VALUE;
+
+        for (int i = 0; i < A.length; i++) {
+            totalSum += A[i];
+        }
+
+        int sequenceSum = 0;
+        int absoluteValue;
+        for (int i = 0; i < A.length; i++) {
+            sequenceSum += A[i];
+            absoluteValue = Math.abs(sequenceSum - (totalSum-sequenceSum));
+
+            if (absoluteValue < minValue) {
+                minValue = absoluteValue;
+            }
+        }
+
+        return minValue;
+    }
+
+
+    public static int solution(int[] A) {
         int totalSum = 0;
         int[] N = new int[A.length-1];
         for (int index = 0; index < A.length-1; index++) {
