@@ -38,16 +38,45 @@ the function should return 6, as explained above.
  */
 package me.study.codility;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
+// 문제 이해.
+// 해당 값(X) 를 찾는데, 1~X 까지 모든 값이 나오면 X 값의 index를 반환
+// 그렇지 않으면 -1
 public class FrogRiverOne {
-    public int solution(int X, int[] A){
-        boolean[] check = new boolean[X];
+    public static void main(String[] args) {
+        int X = 5;
+        int[] A = {1,3,1,4,2,3,5,4};
+
+//        System.out.println(remindSolution(X, A));
+        System.out.println(solution(X, A));
+    }
+
+    // 체크포인트
+    // 1. X 값이 있는지
+    // 2. X 값을 순차적으로 찾는 도중에 X 보다 작은 모든 값이 나오는지
+    public static int remindSolution(int X, int[] A){
+        Set<Integer> save = new HashSet<>();
+
+        for (int i = 0; i < A.length; i++) {
+            save.add(A[i]);
+            if (A[i] == X && X == save.size()) {
+                return i;
+            }
+        }
+        return -1;
+    }
+    public static int solution(int X, int[] A){
+        boolean[] check = new boolean[X]; // X의 수만큼 false Array 생성 Ex. [false, false, false, false, false]
         int count = 0;
         for (int i=0; i < A.length; i++) {
             if (A[i] <= X) {
                 if (check[A[i]-1] == false) {
                     count++;
                 }
-                check[A[i]-1] = true;
+                check[A[i]-1] = true; // index는 0부터 시작하니 -1 해줌.
             }
 
             if (count == X) {
