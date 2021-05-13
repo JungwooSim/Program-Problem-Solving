@@ -49,6 +49,8 @@ the function should return [3, 2, 2, 4, 2], as explained above.
  */
 package me.study.codility;
 
+import java.util.Arrays;
+
 public class MaxCounters {
     public static void main(String[] args) {
         MaxCounters maxCounters = new MaxCounters();
@@ -56,7 +58,34 @@ public class MaxCounters {
         int N = 5;
         int[] A = {3,4,4,6,1,4,4};
 
-        maxCounters.solution(N, A);
+        remindSolution(N, A);
+
+//        System.out.println(Arrays.toString(maxCounters.solution(N, A)));
+    }
+
+    // A array 의 element 를 key 로 사용하는 전략. (이중 포문 사용하지 않도록)
+    // 이방법은 퍼포먼스가 안나옴.
+    public static int[] remindSolution(int N, int[] A){
+        int[] count = new int[N];
+        int max = 0;
+
+        for (int i = 0; i < A.length; i++) {
+            int index = A[i]-1;
+
+            // N 이상일때. (모든 값을 max 값으로)
+            if (index >= N) {
+                for (int j = 0; j < count.length; j++) {
+                    count[j] = max;
+                }
+            } else {
+                count[index]++;
+                if (max < count[index]) {
+                    max = count[index];
+                }
+            }
+        }
+
+        return count;
     }
 
     public int[] solution(int N, int[] A){
@@ -65,20 +94,25 @@ public class MaxCounters {
         int tmpMaxValue = 0;
 
         for (int index=0; index < A.length; index++) {
+
+            // 범위 밖일때 maxValue 설정
             if (A[index] > N) {
                 maxValue = tmpMaxValue;
             } else {
+                // 어떠한 값이든 무조건 maxValue 이상이 되기 때문에 설정해주는 코드
                 if (count[A[index] - 1] < maxValue) {
                     count[A[index] - 1] = maxValue;
                 }
                 count[A[index]-1]++;
 
+                // count Array 의 가장 큰 값을 항상 가지고 있기 위한 코드.
                 if (count[A[index] - 1] > tmpMaxValue) {
                     tmpMaxValue = count[A[index] - 1];
                 }
             }
         }
 
+        // 위 loop 에서 해결하지 못한 값들 설정
         if (maxValue > 0) {
             for (int index=0; index < count.length; index++) {
                 if (count[index] < maxValue) {
