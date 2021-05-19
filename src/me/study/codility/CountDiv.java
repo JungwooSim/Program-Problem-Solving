@@ -20,7 +20,7 @@ public class CountDiv {
         if (A == 0) {
             return B / K + 1;
         } else {
-            return (B / K) - (A - 1) / K;
+            return (B / K) - (A - 1) / K; // 0 ~ B 에 K의 값이 나오는 숫자 - (A-1 , A의 자신을 빼기 위해 -1 ) 에서 K 값이 나오는 숫자
         }
     }
 }
