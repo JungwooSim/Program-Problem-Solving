@@ -15,29 +15,23 @@ phone_book의 길이는 1 이상 1,000,000 이하입니다.
  */
 public class Lesson2 {
     public static void main(String[] args) {
-//        System.out.println(solution(new String[]{"119", "97674223", "1195524421"}));
-//        System.out.println(solution(new String[]{"123","456","789"}));
+        System.out.println(solution(new String[]{"119", "97674223", "1195524421"}));
+        System.out.println(solution(new String[]{"123","456","789"}));
         System.out.println(solution(new String[]{"12","123","1235","567","88"}));
     }
 
-    /*
-    1. phone_book 의 원소들을 모두 검사해야하므로 for 돌리고,
-    2. 1번 for 문 안에서 각 값들의 길이를 계산해서 다시 for 를 돌림.
-    TODO : 정확성, 효율성 모두 실패 재확인 필요
-     */
+    // (정확성 성공, 효율 실패)
     public static boolean solution(String[] phone_book) {
         for (int i = 0; i < phone_book.length - 1; i++) {
             for (int j = i + 1; j < phone_book.length; j++ ) {
                 if (phone_book[i].length() > phone_book[j].length()) {
-                    continue;
-                }
-//                System.out.println("phone_book[i] = " + phone_book[i]);
-//                System.out.println("phone_book[j] = " + phone_book[j]);
-//                System.out.println("phone_book[j].substring = " + phone_book[j].substring(0, phone_book[i].length()));
-//                System.out.println("----");
-
-                if (phone_book[i].equals(phone_book[j].substring(0, phone_book[i].length()))) {
-                    return false;
+                    if (phone_book[i].startsWith(phone_book[j])) {
+                        return false;
+                    }
+                } else {
+                    if (phone_book[j].startsWith(phone_book[i])) {
+                        return false;
+                    }
                 }
             }
         }
