@@ -15,7 +15,7 @@ import java.util.Map;
 - 참가자 중에는 동명이인이 있을 수 있습니다.
 
  */
-public class lessons1 {
+public class Lesson1 {
     public static void main(String[] args) {
         String[] participant = {"leo", "kiki", "eden"};
         String[] completion = {"eden", "kiki"};
