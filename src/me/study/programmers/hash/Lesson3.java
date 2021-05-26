@@ -1,10 +1,6 @@
 package me.study.programmers.hash;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 
 /*
 - 문제 설명
@@ -33,18 +29,21 @@ public class Lesson3 {
 
         System.out.println(solution(clothes));
     }
-
-    // TODO : 진행해야함
+    
     public static int solution(String[][] clothes) {
-        int answer = 0;
+        int answer = 1;
 
+        // 종류 : 개수
         HashMap<String, Integer> clothesMap = new HashMap<>();
         for (int i = 0; i < clothes.length; i++) {
             clothesMap.put(clothes[i][1], clothesMap.getOrDefault(clothes[i][1], 0) + 1);
         }
 
-        System.out.println(clothesMap);
+        // 경우의 수(곱의 법칙)
+        for (String key : clothesMap.keySet()) {
+            answer *= clothesMap.get(key) + 1;
+        }
 
-        return answer;
+        return answer - 1;
     }
 }
