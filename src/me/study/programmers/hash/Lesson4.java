@@ -1,10 +1,10 @@
 package me.study.programmers.hash;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /*
+제목 : 베스트앨범 (코딩테스트 연습 -> 해쉬)
+
 -- 문제 설명
 스트리밍 사이트에서 장르 별로 가장 많이 재생된 노래를 두 개씩 모아 베스트 앨범을 출시하려 합니다. 노래는 고유 번호로 구분하며, 노래를 수록하는 기준은 다음과 같습니다.
 속한 노래가 많이 재생된 장르를 먼저 수록합니다.
@@ -34,19 +34,45 @@ public class Lesson4 {
         System.out.println(Arrays.toString(solution(genres, plays)));
     }
 
-    // TODO : 구현 필
+    // 전략 : 최대한 메모리를 사용하여 데이터를 전처리 후 사용
     public static int[] solution(String[] genres, int[] plays) {
         Map<String, Integer> genresAndPlayTotalCount = new HashMap<>();
+        Map<String, ArrayList<Integer>> playsOfGenres = new HashMap<>();
+        Map<Integer, Integer> playsMap = new HashMap<>();
 
-        // genres 별로 몇곡씩 재생되었는지
         for (int i = 0; i < plays.length; i++) {
+            ArrayList<Integer> qq = playsOfGenres.getOrDefault(genres[i], new ArrayList());
+            qq.add(plays[i]);
+            playsOfGenres.put(genres[i], qq);
+
             genresAndPlayTotalCount.put(genres[i], genresAndPlayTotalCount.getOrDefault(genres[i], 0) + plays[i]);
+
+            playsMap.put(plays[i], i);
         }
 
-        System.out.println(genresAndPlayTotalCount); // {pop=3100, classic=1450}
+        // 정렬을 위한 Map
+        Map<Integer, String> sortMap = new TreeMap<>(Collections.reverseOrder());
+        genresAndPlayTotalCount.forEach((key, value) -> {
+            sortMap.put(value, key);
+        });
 
-        // for 문을 통해 많은 것 먼저요
+        ArrayList<Integer> resultList = new ArrayList<>();
+        int i = 0;
+        for (String value : sortMap.values()) {
+            int j = 0;
+            Collections.sort(playsOfGenres.get(value), Collections.reverseOrder());
+            for (Integer value2 : playsOfGenres.get(value)) {
 
-        return new int[]{};
+                if (j > 1) {
+                    break;
+                }
+
+                resultList.add(playsMap.get(value2));
+                i++;
+                j++;
+            }
+        }
+
+        return resultList.stream().mapToInt(v -> v).toArray();
     }
 }
