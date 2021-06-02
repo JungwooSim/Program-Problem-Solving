@@ -1,6 +1,8 @@
 package me.study.programmers.exhaustive_search;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /*
 제목 : 모의고사
@@ -21,25 +23,44 @@ import java.util.Arrays;
 public class Lesson1 {
     public static void main(String[] args) {
         System.out.println("solution() = " + Arrays.toString(solution(new int[]{1,2,3,4,5})));
-//        System.out.println("solution() = " + Arrays.toString(solution(new int[]{1,3,2,4,2})));
+        System.out.println("solution() = " + Arrays.toString(solution(new int[]{1,3,2,4,2})));
     }
 
-    // TODO : 구현필요
     public static int[] solution(int[] answers) {
         int[] firstStudent = {1, 2, 3, 4, 5};
         int[] secondStudent = {2, 1, 2, 3, 2, 4, 2, 5};
         int[] thirdStudent = {3, 3, 1, 1, 2, 2, 4, 4, 5};
 
-        int firstStudentCount = 0;
-        int questionCount = 10000;
+        int firstStudentScore = 0;
+        int secondStudentScore = 0;
+        int thirdStudentScore = 0;
 
-        for (int i = 0; i <= answers.length; i++) {
-//            System.out.println("firstStudent i = " + (i % firstStudent.length));
-//            System.out.println("secondStudent i = " + (i % secondStudent.length));
-            System.out.println("thirdStudent i = " + (i % thirdStudent.length));
+        int maxScore = 0;
+
+        for (int i = 0; i < answers.length; i++) {
+            if (firstStudent[i % firstStudent.length] == answers[i]) {
+                firstStudentScore++;
+
+                if (maxScore < firstStudentScore) maxScore = firstStudentScore;
+            }
+
+            if (secondStudent[i % secondStudent.length] == answers[i]) {
+                secondStudentScore++;
+
+                if (maxScore < secondStudentScore) maxScore = secondStudentScore;
+            }
+
+            if (thirdStudent[i % thirdStudent.length] == answers[i]) {
+                thirdStudentScore++;
+
+                if (maxScore < thirdStudentScore) maxScore = thirdStudentScore;
+            }
         }
+        List<Integer> result = new ArrayList<>();
+        if (firstStudentScore == maxScore) result.add(1);
+        if (secondStudentScore == maxScore) result.add(2);
+        if (thirdStudentScore == maxScore) result.add(3);
 
-        int[] answer = {};
-        return answer;
+        return result.stream().mapToInt(v -> v).toArray();
     }
 }
